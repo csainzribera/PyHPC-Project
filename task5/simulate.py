@@ -1,5 +1,7 @@
 from os.path import join
 import sys
+import time
+from multiprocessing import Pool
 
 import numpy as np
 
@@ -40,39 +42,85 @@ def summary_stats(u, interior_mask):
         'pct_below_15': pct_below_15,
     }
 
+# FUnction for processing one building 
+def process_building(args):
+    bid, load_dir, max_iter, abs_tol = args # Unpack arguments
+
+    u0, interior_mask = load_data(load_dir, bid) # Load data for building
+    u = jacobi(u0, interior_mask, max_iter, abs_tol) # Run jacobi iterations
+    stats = summary_stats(u, interior_mask) # $Compute summary statistics
+
+    return bid, stats
+
+# Function for processing a chunk of buildings in parallel
+def process_chunk(args):
+    building_ids_chunk, load_dir, max_iter, abs_tol = args
+
+    results = [] # List to store results for this chunk
+    for bid in building_ids_chunk: # Loop over buildings in this chunk
+        result = process_building((bid, load_dir, max_iter, abs_tol)) # Process building and get result
+        results.append(result) # Append result to list
+
+    return results
+
+# Function to split list of items into n_chunks approximately equal parts
+def split_into_chunks(items, n_chunks):
+    n = len(items)
+    base = n // n_chunks
+    rem = n % n_chunks
+
+    chunks = []
+    start = 0
+
+    for i in range(n_chunks):
+        extra = 1 if i < rem else 0
+        end = start + base + extra
+        chunks.append(items[start:end])
+        start = end
+
+    return chunks
 
 if __name__ == '__main__':
-    # Load data
     LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwellings/'
-    with open(join(LOAD_DIR, 'building_ids.txt'), 'r') as f:
-        building_ids = f.read().splitlines()
+    MAX_ITER = 20_000
+    ABS_TOL = 1e-4
 
     if len(sys.argv) < 2:
         N = 1
     else:
         N = int(sys.argv[1])
+
+    if len(sys.argv) < 3:
+        n_workers = 1
+    else:
+        n_workers = int(sys.argv[2])
+
+    with open(join(LOAD_DIR, 'building_ids.txt'), 'r') as f:
+        building_ids = f.read().splitlines()
+
     building_ids = building_ids[:N]
 
-    # Load floor plans
-    all_u0 = np.empty((N, 514, 514))
-    all_interior_mask = np.empty((N, 512, 512), dtype='bool')
-    for i, bid in enumerate(building_ids):
-        u0, interior_mask = load_data(LOAD_DIR, bid)
-        all_u0[i] = u0
-        all_interior_mask[i] = interior_mask
+    chunks = split_into_chunks(building_ids, n_workers)
 
-    # Run jacobi iterations for each floor plan
-    MAX_ITER = 20_000
-    ABS_TOL = 1e-4
+    chunk_args = []
+    for chunk in chunks:
+        chunk_args.append((chunk, LOAD_DIR, MAX_ITER, ABS_TOL))
 
-    all_u = np.empty_like(all_u0)
-    for i, (u0, interior_mask) in enumerate(zip(all_u0, all_interior_mask)):
-        u = jacobi(u0, interior_mask, MAX_ITER, ABS_TOL)
-        all_u[i] = u
+    t0 = time.perf_counter()
 
-    # Print summary statistics in CSV format
+    with Pool(processes=n_workers) as pool:
+        chunk_results = pool.map(process_chunk, chunk_args)
+
+    t1 = time.perf_counter()
+    elapsed = t1 - t0
+
+    results = []
+    for chunk in chunk_results:
+        results.extend(chunk)
+
     stat_keys = ['mean_temp', 'std_temp', 'pct_above_18', 'pct_below_15']
-    print('building_id, ' + ', '.join(stat_keys))  # CSV header
-    for bid, u, interior_mask in zip(building_ids, all_u, all_interior_mask):
-        stats = summary_stats(u, interior_mask)
-        print(f"{bid},", ", ".join(str(stats[k]) for k in stat_keys))
+
+    print(f'# workers={n_workers}, N={N}, elapsed_seconds={elapsed:.6f}')
+    print('building_id,' + ','.join(stat_keys))
+    for bid, stats in results:
+        print(f"{bid}," + ",".join(str(stats[k]) for k in stat_keys))
