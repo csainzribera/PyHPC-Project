@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-#BSUB -J first_run
+#BSUB -J first_run_100
 #BSUB -q hpc
 #BSUB -W 60
 #BSUB -R "rusage[mem=512MB]"
@@ -9,9 +9,9 @@
 #BSUB -e first_run_%J.err
 
 source /dtu/projects/02613_2025/conda/conda_init.sh
-conda activate 02613
+conda activate 02613_2026
 
-python simulate.py 10
+python simulate.py 100
 
 
 
