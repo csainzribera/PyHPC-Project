@@ -2,7 +2,6 @@ from os.path import join
 import sys
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 def load_data(load_dir, bid):
@@ -77,38 +76,3 @@ if __name__ == '__main__':
     for bid, u, interior_mask in zip(building_ids, all_u, all_interior_mask):
         stats = summary_stats(u, interior_mask)
         print(f"{bid},", ", ".join(str(stats[k]) for k in stat_keys))
-
-    # Visualize results for the first few floorplans
-    num_to_visualize = min(3, N)
-    fig, axes = plt.subplots(num_to_visualize, 2, figsize=(10, 5*num_to_visualize))
-    if num_to_visualize == 1:
-        axes = [axes]  # Make it 2D
-
-    for i in range(num_to_visualize):
-        bid = building_ids[i]
-        u0 = all_u0[i]
-        u = all_u[i]
-        interior_mask = all_interior_mask[i]
-
-        # Prepare data for plotting: set exterior to NaN for better visualization
-        temp_initial = np.full((512, 512), np.nan)
-        temp_initial[interior_mask] = u0[1:-1, 1:-1][interior_mask]
-
-        temp_final = np.full((512, 512), np.nan)
-        temp_final[interior_mask] = u[1:-1, 1:-1][interior_mask]
-
-        # Plot initial temperature
-        im1 = axes[i][0].imshow(temp_initial, cmap='coolwarm', vmin=10, vmax=25)
-        axes[i][0].set_title(f'Building {bid} - Initial Temperature')
-        axes[i][0].axis('off')
-        plt.colorbar(im1, ax=axes[i][0], shrink=0.8)
-
-        # Plot final temperature
-        im2 = axes[i][1].imshow(temp_final, cmap='coolwarm', vmin=10, vmax=25)
-        axes[i][1].set_title(f'Building {bid} - Final Temperature')
-        axes[i][1].axis('off')
-        plt.colorbar(im2, ax=axes[i][1], shrink=0.8)
-
-    plt.tight_layout()
-    plt.savefig('floorplan_visualization.png', dpi=150, bbox_inches='tight')
-    plt.show()
