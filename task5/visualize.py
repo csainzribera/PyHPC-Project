@@ -22,10 +22,10 @@ def extract_timing(filepath: Path):
 
 
 def main():
-    files = sorted(Path(".").glob("n=100_processes=*.txt"))
+    files = sorted(Path(".").glob("n=50_processes=*.txt"))
 
     if not files:
-        raise FileNotFoundError("No files matching 'n=100_processes=*.txt' were found.")
+        raise FileNotFoundError("No files matching 'n=50_processes=*.txt' were found.")
 
     results = []
     for file in files:
@@ -46,7 +46,7 @@ def main():
     plt.plot(workers, elapsed_times, marker="o")
     plt.xlabel("Number of workers")
     plt.ylabel("Elapsed time (seconds)")
-    plt.title("Elapsed time vs number of workers (N=100)")
+    plt.title("Elapsed time vs number of workers (N=50)")
     plt.grid(True)
     plt.xticks(workers)
     plt.tight_layout()
@@ -59,7 +59,7 @@ def main():
     plt.plot(workers, workers, linestyle="--", label="Ideal speed-up")
     plt.xlabel("Number of workers")
     plt.ylabel("Speed-up")
-    plt.title("Speed-up vs number of workers (N=100)")
+    plt.title("Speed-up vs number of workers (N=50)")
     plt.grid(True)
     plt.xticks(workers)
     plt.legend()

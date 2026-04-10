@@ -13,9 +13,9 @@
 source /dtu/projects/02613_2025/conda/conda_init.sh
 conda activate 02613_2026
 
-python simulate.py 100 1 > n=100_processes=1.txt 
-python simulate.py 100 2 > n=100_processes=2.txt
-python simulate.py 100 4 > n=100_processes=4.txt
-python simulate.py 100 8 > n=100_processes=8.txt
-python simulate.py 100 16 > n=100_processes=16.txt
-python simulate.py 100 32 > n=100_processes=32.txt
+python simulate.py 50 1 > n=100_processes=1.txt 
+python simulate.py 50 2 > n=100_processes=2.txt
+python simulate.py 50 4 > n=100_processes=4.txt
+python simulate.py 50 8 > n=100_processes=8.txt
+python simulate.py 50 16 > n=100_processes=16.txt
+python simulate.py 50 32 > n=100_processes=32.txt
