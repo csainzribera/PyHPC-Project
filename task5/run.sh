@@ -2,10 +2,11 @@
 
 #BSUB -J n=100_multiprocessing
 #BSUB -q hpc
-#BSUB -n 12
+#BSUB -n 32
 #BSUB -W 100
 #BSUB -R "rusage[mem=512MB]"
 #BSUB -R "span[hosts=1]"
+#BSUB -R "select[model == XeonGold6126]"
 #BSUB -o n=100_multiprocessing_%J.out
 #BSUB -e n=100_multiprocessing_%J.err
 
@@ -16,5 +17,5 @@ python simulate.py 100 1 > n=100_processes=1.txt
 python simulate.py 100 2 > n=100_processes=2.txt
 python simulate.py 100 4 > n=100_processes=4.txt
 python simulate.py 100 8 > n=100_processes=8.txt
-python simulate.py 100 10 > n=100_processes=10.txt
-python simulate.py 100 12 > n=100_processes=12.txt
+python simulate.py 100 16 > n=100_processes=16.txt
+python simulate.py 100 32 > n=100_processes=32.txt
