@@ -1,0 +1,99 @@
+No GPU on this node, CUDA module not loaded
+building_id, mean_temp, std_temp, pct_above_18, pct_below_15
+10000, 14.01233878811275, 6.367431059312565, 30.941014791508444, 55.542295034537624
+10009, 11.000135812436373, 5.811144379826625, 16.6712734948236, 74.9723590310584
+10014, 14.744169941950119, 7.037733284673848, 38.26367541377415, 52.80837116508215
+10019, 14.735524480624482, 7.030325006703675, 38.14915412864569, 52.92926826787113
+10029, 10.616037322820358, 6.317331938274926, 18.25563221896085, 74.51301795448481
+10031, 12.507072852890545, 6.278432089100354, 24.044722033998173, 66.39513301711693
+10051, 13.289039951277402, 5.999085063388632, 25.97693550756574, 62.859923608050536
+10053, 11.366493551285709, 6.26121798185875, 19.9510754583921, 72.41052538787024
+10056, 14.220114507861702, 6.179461157398302, 31.763454814173965, 57.06174975667784
+10064, 12.71696893739585, 6.964227784263683, 28.79137124461432, 62.75688345539249
+Wrote profile results to 'task4.py.lprof'
+Inspect results with:
+python -m line_profiler -rmt task4.py.lprof
+Timer unit: 1e-06 s
+
+Total time: 103.663 s
+File: task4.py
+Function: jacobi at line 14
+
+Line #      Hits         Time  Per Hit   % Time  Line Contents
+==============================================================
+    14                                           @profile
+    15                                           def jacobi(u, interior_mask, max_iter, atol=1e-6):
+    16        10       6883.7    688.4      0.0      u = np.copy(u)
+    17                                           
+    18     47282      48669.5      1.0      0.0      for i in range(max_iter):
+    19                                                   # Compute average of left, right, up and down neighbors, see eq. (1)
+    20     47282   57972999.5   1226.1     55.9          u_new = 0.25 * (u[1:-1, :-2] + u[1:-1, 2:] + u[:-2, 1:-1] + u[2:, 1:-1])
+    21     47282   11091173.7    234.6     10.7          u_new_interior = u_new[interior_mask]
+    22     47282   22040741.8    466.2     21.3          delta = np.abs(u[1:-1, 1:-1][interior_mask] - u_new_interior).max()
+    23     47282   12395853.1    262.2     12.0          u[1:-1, 1:-1][interior_mask] = u_new_interior
+    24                                           
+    25     47282     106575.1      2.3      0.1          if delta < atol:
+    26        10         23.4      2.3      0.0              break
+    27        10         23.7      2.4      0.0      return u
+
+103.66 seconds - task4.py:14 - jacobi
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28175246: <projectTask4> in cluster <dcc> Done
+
+Job <projectTask4> was submitted from host <n-62-30-8> by user <s252722> in cluster <dcc> at Thu Apr  9 17:26:43 2026
+Job was executed on host(s) <n-62-31-4>, in queue <hpc>, as user <s252722> in cluster <dcc> at Thu Apr  9 17:26:50 2026
+</zhome/09/4/222813> was used as the home directory.
+</zhome/09/4/222813/Desktop/python_hpc/project> was used as the working directory.
+Started at Thu Apr  9 17:26:50 2026
+Terminated at Thu Apr  9 17:28:37 2026
+Results reported at Thu Apr  9 17:28:37 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+
+#BSUB -J projectTask4
+#BSUB -q hpc
+#BSUB -W 30
+#BSUB -R "rusage[mem=512MB]"
+#BSUB -n 1
+#BSUB -R "span[hosts=1]"
+#BSUB -o logFiles/jobTask4_%J.out
+#BSUB -e logFiles/jobTask4_%J.err
+
+#BSUB -R "select[model == XeonGold6126]"
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613_2026
+
+kernprof -l task4.py 10
+python -m line_profiler -rmt task4.py.lprof
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   105.60 sec.
+    Max Memory :                                 72 MB
+    Average Memory :                             70.67 MB
+    Total Requested Memory :                     512.00 MB
+    Delta Memory :                               440.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                5
+    Run time :                                   107 sec.
+    Turnaround time :                            114 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <logFiles/jobTask4_28175246.err> for stderr output of this job.
+
