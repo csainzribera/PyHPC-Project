@@ -1,0 +1,17 @@
+Exercise 7b and 7c
+The implementation of the Jacobi solver using Numba's Just-In-Time (JIT) compilation has resulted in a significant performance improvement. The average processing time per floor plan decreased from 22.2548 seconds (reference implementation) to 2.2905 seconds, representing a speed-up of approximately 9.7x.
+
+This enhancement is attributed to three main factors:
+
+1. JIT Compilation to Machine Code
+By using the @njit (nopython mode) decorator, Python’s high-level interpreted code is translated into optimized machine code specifically tailored for the host CPU. This eliminates the overhead of the Python interpreter and the constant type-checking during the 20,000 iterations of the solver.
+
+2. Cache-Aware Memory Access Pattern
+Unlike the vectorized NumPy implementation which relies on high-level masks, the Numba version utilizes explicit nested for loops. We specifically structured these loops to follow a Row-Major access pattern (iterating over rows i in the outer loop and columns j in the inner loop).
+Why it works: Since NumPy arrays are stored contiguously in memory by rows, this sequential access ensures that when the CPU fetches a data point, it also loads a "cache line" containing subsequent elements into the L1/L2 cache.
+The Result: This maximizes cache hits and minimizes expensive fetches from the main RAM, allowing the CPU to process the stencil operation at its maximum throughput.
+
+3. Handling Compilation Overhead (Warm-up)
+To ensure the timing results were accurate and not skewed by the initial compilation phase, a "warm-up" execution was performed.
+Method: The jacobi_numba function was called once with a single floor plan and max_iter=1 before starting the experimental timer.
+Outcome: This triggered the JIT compiler to generate and cache the machine code for the specific input types. Consequently, the measured execution time reflects only the actual computation and not the time spent by Numba during the compilation process.

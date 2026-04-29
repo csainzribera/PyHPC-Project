@@ -1,0 +1,62 @@
+
+ Total Computation Time (50 floors): 120.9942 s
+Estimation for 4571 floors: 3.07 h
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28326406: <simulate_9> in cluster <dcc> Done
+
+Job <simulate_9> was submitted from host <hpclogin1> by user <s254388> in cluster <dcc> at Wed Apr 29 15:19:42 2026
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02613>, as user <s254388> in cluster <dcc> at Wed Apr 29 15:19:44 2026
+</zhome/94/4/224742> was used as the home directory.
+</zhome/94/4/224742/proyecto_hpc/Exercise_9_10> was used as the working directory.
+Started at Wed Apr 29 15:19:44 2026
+Terminated at Wed Apr 29 15:21:48 2026
+Results reported at Wed Apr 29 15:21:48 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -q c02613
+#BSUB -J simulate_9
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+#BSUB -R "rusage[mem=4GB]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -W 00:30
+#BSUB -o %J.out
+#BSUB -e %J.err
+
+# 1. Setup environment
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613_2026    
+
+# 2. Run the script for 50 floorplans
+python simulate_9.py 50
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   122.56 sec.
+    Max Memory :                                 321 MB
+    Average Memory :                             241.00 MB
+    Total Requested Memory :                     16384.00 MB
+    Delta Memory :                               16063.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                10
+    Run time :                                   124 sec.
+    Turnaround time :                            126 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <28326406.err> for stderr output of this job.
+
