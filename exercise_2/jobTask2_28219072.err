@@ -1,0 +1,15 @@
+Loaded dependency [OpenFoam/v2506/gcc-13.4.0-binutils-2.44-openmpi-5.0.8]: make/4.4.1
+Loaded dependency [mpi/5.0.8-gcc-13.4.0-binutils-2.44]: gcc/13.4.0-binutils-2.44
+Loaded dependency [OpenFoam/v2506/gcc-13.4.0-binutils-2.44-openmpi-5.0.8]: mpi/5.0.8-gcc-13.4.0-binutils-2.44
+Loaded dependency [OpenFoam/v2506/gcc-13.4.0-binutils-2.44-openmpi-5.0.8]: cmake/3.29.9
+Loaded dependency [OpenFoam/v2506/gcc-13.4.0-binutils-2.44-openmpi-5.0.8]: ninja/1.12.1
+Loaded module: OpenFoam/v2506/gcc-13.4.0-binutils-2.44-openmpi-5.0.8
+using OpenFoam optimized for cpuarch: XeonGold6126
+
+Loading OpenFoam/v2506/gcc-13.4.0-binutils-2.44-openmpi-5.0.8
+  Loading requirement: make/4.4.1 gcc/13.4.0-binutils-2.44
+    mpi/5.0.8-gcc-13.4.0-binutils-2.44 cmake/3.29.9 ninja/1.12.1
+
+real	4m53.190s
+user	4m51.257s
+sys	0m0.501s
