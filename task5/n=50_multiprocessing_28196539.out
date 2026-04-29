@@ -1,0 +1,66 @@
+No GPU on this node, CUDA module not loaded
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28196539: <n=50_multiprocessing> in cluster <dcc> Done
+
+Job <n=50_multiprocessing> was submitted from host <hpclogin1> by user <s253695> in cluster <dcc> at Mon Apr 13 13:41:24 2026
+Job was executed on host(s) <24*n-62-31-15>, in queue <hpc>, as user <s253695> in cluster <dcc> at Mon Apr 13 16:37:32 2026
+</zhome/16/8/223928> was used as the home directory.
+</zhome/16/8/223928/PyHPC/PyHPC-Project/task5> was used as the working directory.
+Started at Mon Apr 13 16:37:32 2026
+Terminated at Mon Apr 13 17:07:34 2026
+Results reported at Mon Apr 13 17:07:34 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash 
+
+#BSUB -J n=50_multiprocessing
+#BSUB -q hpc
+#BSUB -n 24
+#BSUB -W 100
+#BSUB -R "rusage[mem=4GB]"
+#BSUB -R "span[hosts=1]"
+#BSUB -R "select[model == XeonGold6126]"
+#BSUB -o n=50_multiprocessing_%J.out
+#BSUB -e n=50_multiprocessing_%J.err
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613_2026
+
+python simulate.py 50 1 > n=50_processes=1.txt 
+python simulate.py 50 2 > n=50_processes=2.txt
+python simulate.py 50 4 > n=50_processes=4.txt
+python simulate.py 50 8 > n=50_processes=8.txt
+python simulate.py 50 12 > n=50_processes=12.txt
+python simulate.py 50 16 > n=50_processes=16.txt
+python simulate.py 50 20 > n=50_processes=20.txt
+python simulate.py 50 24 > n=50_processes=24.txt
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   6054.64 sec.
+    Max Memory :                                 150 MB
+    Average Memory :                             73.08 MB
+    Total Requested Memory :                     98304.00 MB
+    Delta Memory :                               98154.00 MB
+    Max Swap :                                   -
+    Max Processes :                              28
+    Max Threads :                                32
+    Run time :                                   1802 sec.
+    Turnaround time :                            12370 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <n=50_multiprocessing_28196539.err> for stderr output of this job.
+
