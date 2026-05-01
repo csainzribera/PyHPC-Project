@@ -81,6 +81,8 @@ def split_into_chunks(items, n_chunks):
     return chunks
 
 if __name__ == '__main__':
+
+    t0 = time.perf_counter()
     LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwellings/'
     MAX_ITER = 20_000
     ABS_TOL = 1e-4
@@ -105,8 +107,6 @@ if __name__ == '__main__':
     chunk_args = []
     for chunk in chunks:
         chunk_args.append((chunk, LOAD_DIR, MAX_ITER, ABS_TOL))
-
-    t0 = time.perf_counter()
 
     with Pool(processes=n_workers) as pool:
         chunk_results = pool.map(process_chunk, chunk_args)
