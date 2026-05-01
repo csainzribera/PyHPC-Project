@@ -1,0 +1,67 @@
+Total computation time for 50 floors: 67.4095 seconds
+Average computation per floor: 1.3482 seconds
+
+Sample statistics (first floor):
+{'mean_temp': 14.016701434535019, 'std_temp': 6.3676492622326135, 'pct_above_18': 30.966330331633575, 'pct_below_15': 55.47538967849264}
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28214970: <ex8_gpu> in cluster <dcc> Done
+
+Job <ex8_gpu> was submitted from host <hpclogin1> by user <s252746> in cluster <dcc> at Wed Apr 15 10:51:17 2026
+Job was executed on host(s) <4*n-62-11-13>, in queue <gpuv100>, as user <s252746> in cluster <dcc> at Wed Apr 15 10:51:30 2026
+</zhome/b7/2/222915> was used as the home directory.
+</zhome/b7/2/222915/02613_hpcPy> was used as the working directory.
+Started at Wed Apr 15 10:51:30 2026
+Terminated at Wed Apr 15 10:52:41 2026
+Results reported at Wed Apr 15 10:52:41 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+#BSUB -J ex8_gpu
+#BSUB -q gpuv100              # GPU queue (A100 GPUs)
+#BSUB -n 4                    # CPU cores (min 4 required)
+#BSUB -W 00:30                # Wall time
+#BSUB -R "span[hosts=1]"
+#BSUB -R "rusage[mem=4GB]"   # Memory per CPU core
+#BSUB -gpu "num=1:mode=exclusive_process"   # Request 1 GPU
+#BSUB -R "select[gpu32gb]"   # Optional: choose 40GB GPU (A100)
+#BSUB -o %J.out
+#BSUB -e %J.err
+
+# Load environment
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613_2026
+
+# Load CUDA (required for GPU)
+module load cuda
+
+# Run your program
+python exercise8.py 50
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   69.31 sec.
+    Max Memory :                                 235 MB
+    Average Memory :                             235.00 MB
+    Total Requested Memory :                     16384.00 MB
+    Delta Memory :                               16149.00 MB
+        Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                9
+    Run time :                                   71 sec.
+    Turnaround time :                            84 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <28214970.err> for stderr output of this job.
