@@ -53,6 +53,8 @@ def process_building(args):
     return bid, stats
 
 if __name__ == '__main__':
+
+    t0 = time.perf_counter()
     LOAD_DIR = '/dtu/projects/02613_2025/data/modified_swiss_dwellings/'
     MAX_ITER = 20_000
     ABS_TOL = 1e-4
@@ -75,8 +77,6 @@ if __name__ == '__main__':
     building_args = []
     for bid in building_ids:
         building_args.append((bid, LOAD_DIR, MAX_ITER, ABS_TOL))
-
-    t0 = time.perf_counter()
 
     with Pool(processes=n_workers) as pool:
         results = list(pool.imap_unordered(process_building, building_args, chunksize=1))
