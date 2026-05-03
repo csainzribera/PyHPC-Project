@@ -1,0 +1,82 @@
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/nvtxsum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain NV Tools Extension (NVTX) data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/osrtsum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain OS Runtime trace data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/cudaapisum.py]... 
+
+ ** CUDA API Summary (cudaapisum):
+
+ Time (%)  Total Time (ns)  Num Calls   Avg (ns)    Med (ns)   Min (ns)  Max (ns)   StdDev (ns)              Name            
+ --------  ---------------  ---------  ----------  ----------  --------  ---------  -----------  ----------------------------
+     98.9        119030795          2  59515397.5  59515397.5    195514  118835281   83890983.8  cudaMalloc                  
+      1.0          1240603          1   1240603.0   1240603.0   1240603    1240603          0.0  cudaHostAlloc               
+      0.0            40938          1     40938.0     40938.0     40938      40938          0.0  cudaMemsetAsync             
+      0.0            19265          1     19265.0     19265.0     19265      19265          0.0  cudaMemcpyAsync             
+      0.0            11852          1     11852.0     11852.0     11852      11852          0.0  cudaEventRecord             
+      0.0            11700          1     11700.0     11700.0     11700      11700          0.0  cudaEventCreateWithFlags    
+      0.0             5114          1      5114.0      5114.0      5114       5114          0.0  cudaEventQuery              
+      0.0             2981          1      2981.0      2981.0      2981       2981          0.0  cudaStreamIsCapturing_v10000
+      0.0             1607          1      1607.0      1607.0      1607       1607          0.0  cuModuleGetLoadingMode      
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/gpukernsum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain CUDA kernel data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/gpumemtimesum.py]... 
+
+ ** GPU MemOps Summary (by Time) (gpumemtimesum):
+
+ Time (%)  Total Time (ns)  Count  Avg (ns)  Med (ns)  Min (ns)  Max (ns)  StdDev (ns)      Operation     
+ --------  ---------------  -----  --------  --------  --------  --------  -----------  ------------------
+     95.2            88479      1   88479.0   88479.0     88479     88479          0.0  [CUDA memcpy HtoD]
+      4.8             4480      1    4480.0    4480.0      4480      4480          0.0  [CUDA memset]     
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/gpumemsizesum.py]... 
+
+ ** GPU MemOps Summary (by Size) (gpumemsizesum):
+
+ Total (MB)  Count  Avg (MB)  Med (MB)  Min (MB)  Max (MB)  StdDev (MB)      Operation     
+ ----------  -----  --------  --------  --------  --------  -----------  ------------------
+      1.057      1     1.057     1.057     1.057     1.057        0.000  [CUDA memset]     
+      1.049      1     1.049     1.049     1.049     1.049        0.000  [CUDA memcpy HtoD]
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/openmpevtsum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain OpenMP event data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/khrdebugsum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain KHR Extension (KHR_DEBUG) data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/khrdebuggpusum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain GPU KHR Extension (KHR_DEBUG) data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/vulkanmarkerssum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain Vulkan Debug Extension (Vulkan Debug Util) data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/vulkangpumarkersum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain GPU Vulkan Debug Extension (GPU Vulkan Debug markers) data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/dx11pixsum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain DX11 CPU debug markers.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/dx12gpumarkersum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain DX12 GPU debug markers.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/dx12pixsum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain DX12 CPU debug markers.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/wddmqueuesdetails.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain WDDM context data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/unifiedmemory.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/unifiedmemorytotals.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/umcpupagefaults.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain CUDA Unified Memory CPU page faults data.
+
+Processing [jacobi_clean.sqlite] with [/appl/cuda/11.8.0/nsight-systems-2022.4.2/host-linux-x64/reports/openaccsum.py]... 
+SKIPPED: jacobi_clean.sqlite does not contain OpenACC event data.
+
