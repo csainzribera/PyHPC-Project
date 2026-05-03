@@ -1,0 +1,123 @@
+GPU time: 113.226s for 50
+building_id,mean,std,%>18,%<15
+10000,14.0123,6.3674,30.9,55.5
+10009,11.0012,5.8109,16.7,75.0
+10014,14.7445,7.0375,38.3,52.8
+10019,14.7358,7.0301,38.2,52.9
+10029,10.6161,6.3173,18.3,74.5
+10031,12.5080,6.2783,24.0,66.4
+10051,13.2895,5.9991,26.0,62.9
+10053,11.3667,6.2612,20.0,72.4
+10056,14.2202,6.1795,31.8,57.1
+10064,12.7178,6.9642,28.8,62.8
+10075,15.1578,6.4406,39.1,47.5
+10079,15.0948,7.3137,41.9,49.4
+10080,15.7780,7.2805,46.4,44.7
+10082,16.4662,6.7131,48.6,40.6
+10083,15.6393,7.1208,44.9,45.9
+10084,15.1009,7.1504,40.9,50.3
+10085,15.8690,7.1927,46.2,44.7
+10086,14.3919,7.2155,37.3,53.0
+10087,15.0733,7.2754,41.5,49.9
+10089,13.9902,7.2761,35.5,56.4
+10090,14.2900,6.6189,36.6,51.2
+10093,14.0956,6.5672,33.4,56.5
+10094,14.1943,6.7614,35.4,54.9
+10097,14.3534,6.8625,37.8,51.3
+10117,15.4657,6.6822,44.1,44.5
+10119,14.0878,6.7517,35.1,54.7
+10120,15.2819,8.0315,46.2,47.7
+10124,13.8657,7.0325,34.6,56.1
+10126,13.3962,6.6367,29.7,61.1
+10128,17.4270,6.7064,56.0,34.9
+10136,15.4237,7.2731,44.3,46.9
+10144,12.1076,6.1273,21.8,68.9
+10145,10.6494,5.8925,16.6,75.3
+10150,14.9602,7.4954,41.2,50.7
+10161,13.4488,7.0305,31.8,59.5
+10165,13.0534,6.7325,29.1,62.1
+10167,13.2316,6.8148,30.2,60.9
+10168,13.1924,6.9010,30.3,60.5
+10174,16.5773,6.9729,49.4,41.4
+10176,16.6510,6.8574,49.8,40.7
+10177,16.6189,6.7872,49.1,41.0
+10180,16.4849,6.8694,48.2,42.1
+10182,16.7345,6.3196,50.9,37.5
+10198,14.4287,7.3421,38.6,53.2
+10199,17.2414,6.9770,53.9,37.7
+10200,12.8230,7.2588,30.7,61.7
+10201,15.9500,7.2721,47.1,44.6
+10202,13.5460,7.4955,34.0,58.6
+10203,16.8041,6.6123,51.2,38.9
+10204,14.7648,7.0639,39.0,51.7
+Generating '/tmp/nsys-report-4f05.qdstrm'
+[1/1] [0%                          ] jacobi_clean.nsys-rep[1/1] [0%                          ] jacobi_clean.nsys-rep[1/1] [===========50%              ] jacobi_clean.nsys-rep[1/1] [0%                          ] jacobi_clean.nsys-rep[1/1] [0%                          ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [==19%                       ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [8%                          ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [10%                         ] jacobi_clean.nsys-rep[1/1] [11%                         ] jacobi_clean.nsys-rep[1/1] [12%                         ] jacobi_clean.nsys-rep[1/1] [13%                         ] jacobi_clean.nsys-rep[1/1] [14%                         ] jacobi_clean.nsys-rep[1/1] [=15%                        ] jacobi_clean.nsys-rep[1/1] [=16%                        ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [10%                         ] jacobi_clean.nsys-rep[1/1] [11%                         ] jacobi_clean.nsys-rep[1/1] [12%                         ] jacobi_clean.nsys-rep[1/1] [13%                         ] jacobi_clean.nsys-rep[1/1] [14%                         ] jacobi_clean.nsys-rep[1/1] [=15%                        ] jacobi_clean.nsys-rep[1/1] [11%                         ] jacobi_clean.nsys-rep[1/1] [13%                         ] jacobi_clean.nsys-rep[1/1] [14%                         ] jacobi_clean.nsys-rep[1/1] [11%                         ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [11%                         ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [11%                         ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [10%                         ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [8%                          ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [8%                          ] jacobi_clean.nsys-rep[1/1] [9%                          ] jacobi_clean.nsys-rep[1/1] [8%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [8%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [8%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [8%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [5%                          ] jacobi_clean.nsys-rep[1/1] [6%                          ] jacobi_clean.nsys-rep[1/1] [7%                          ] jacobi_clean.nsys-rep[1/1] [========================100%] jacobi_clean.nsys-rep
+Generated:
+    /zhome/b7/2/222915/02613_hpcPy/jacobi_clean.qdstrm
+    /zhome/b7/2/222915/02613_hpcPy/jacobi_clean.nsys-rep
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 28342055: <jacobi_cupy_clean> in cluster <dcc> Done
+
+Job <jacobi_cupy_clean> was submitted from host <n-62-30-4> by user <s252746> in cluster <dcc> at Sun May  3 19:00:34 2026
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02613>, as user <s252746> in cluster <dcc> at Sun May  3 19:00:35 2026
+</zhome/b7/2/222915> was used as the home directory.
+</zhome/b7/2/222915/02613_hpcPy> was used as the working directory.
+Started at Sun May  3 19:00:35 2026
+Terminated at Sun May  3 19:03:21 2026
+Results reported at Sun May  3 19:03:21 2026
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/bash
+#BSUB -J jacobi_cupy_clean
+#BSUB -q c02613
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+#BSUB -R "rusage[mem=6GB]"
+#BSUB -gpu "num=1:mode=exclusive_process"
+#BSUB -W 00:30
+#BSUB -o %J.out
+#BSUB -e %J.err
+#BSUB -u s252746@dtu.dk
+
+# Load modules
+
+source /dtu/projects/02613_2025/conda/conda_init.sh
+conda activate 02613_2026
+ module load cuda/11.8
+# SOLUTION 1: Profile with MINIMAL tracing (avoids API compatibility issues)
+# Only trace CUDA kernels and memory operations
+nsys profile --trace=cuda,nvtx --force-overwrite true -o jacobi_clean python ex10final_p.py 50
+
+# Generate clean statistics
+nsys stats jacobi_clean.nsys-rep > jacobi_clean_stats.txt
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   182.00 sec.
+    Max Memory :                                 891 MB
+    Average Memory :                             372.75 MB
+    Total Requested Memory :                     24576.00 MB
+    Delta Memory :                               23685.00 MB
+    Max Swap :                                   -
+    Max Processes :                              8
+    Max Threads :                                33
+    Run time :                                   166 sec.
+    Turnaround time :                            167 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <28342055.err> for stderr output of this job.
+
